@@ -1,0 +1,12 @@
+docker run --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=toor -d mysql:latest
+MySQLWorkBench -> Database -> Manage Connections -> New Connection and Test
+
+docker exec -it <container-name> /bin/bash
+bash  > mysql -uroot -p -A
+mysql > select user,host from mysql.user;
+mysql > update mysql.user set host='%' where user='root';
+mysql > flush privileges;
+exit
+
+mysql -uroot -p -P3307 -h127.0.0.1
+mysql > show database

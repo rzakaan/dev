@@ -1,0 +1,12 @@
+# without configuration file
+docker run --name some-mongo -p 27017:27017 -d mongo:latest
+
+# docker compose file => docker-compose.yml
+services:
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    command: --serviceExecutor adaptive
+
+> docker-compose -f docker-compose.yml up -d
